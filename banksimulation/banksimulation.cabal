@@ -1,0 +1,70 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: d8d5e7f903d20b1cc3659e7bb3d8286b9dbd0b86d5b494a5ab3dd36d8ba8c375
+
+name:           banksimulation
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/banksimulation#readme>
+homepage:       https://github.com/githubuser/banksimulation#readme
+bug-reports:    https://github.com/githubuser/banksimulation/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2020 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/banksimulation
+
+library
+  exposed-modules:
+      BankDynamics
+      DataAggregation
+      RandomGeneration
+  other-modules:
+      Paths_banksimulation
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , mwc-random
+    , random
+  default-language: Haskell2010
+
+executable banksimulation-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_banksimulation
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      banksimulation
+    , base >=4.7 && <5
+    , mwc-random
+    , random
+  default-language: Haskell2010
+
+test-suite banksimulation-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_banksimulation
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      banksimulation
+    , base >=4.7 && <5
+    , mwc-random
+    , random
+  default-language: Haskell2010
